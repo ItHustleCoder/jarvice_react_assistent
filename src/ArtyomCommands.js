@@ -12,57 +12,61 @@ export default class ArtyomCommandsManager {
 
         // Here you can load all the commands that you want to Artyom
         return Artyom.addCommands([
-            {
-                indexes: ["Buongiorno", "Buonasera","Ciao"],
-                action: (i) => {
-                    // if(i == 0) {
-                    //     Artyom.say("Buongiorno, come stai ?");
-                    // } else if(i == 1) {
-                    //     Artyom.say('Buonasera');
-                    // } else if(i == 2) {
-                    //     Artyom.say('Buon Pomeriggio');
-                    // } else if(i == 3){
-                    //     Artyom.say("Caio, come stai?");
-                    // }
-                    switch(i) {
-                        case 0:
-                            Artyom.say("Buongiorno, come stai?");
-                            break;
-                        case 1:
-                            Artyom.say("Buonasera, non tardi mai per programmare!");
-                            break;
+            
+                   
+
+
+                //     switch(i) {
+                //         case 0:
+                //             Artyom.say("Buongiorno, come stai?");
+                //             break;
+                //         case 1:
+                //             Artyom.say("Buonasera, non tardi mai per programmare!");
+                //             break;
                        
-                        case 2:
-                            Artyom.say("Ciao!");
-                        break;
-                    }
-                }
+                //         case 2:
+                //             Artyom.say("Ciao!");
+                //         break;
+                //     }
+                        // }
                 
-            },
+            
 
             {
                 indexes: ["come la situazione?", "informazioni per developer"],
                 action: (i) => {
                     if( i == 0) {
-                        Artyom.say("Tutto bene, sto studiando come diventera più inteligente !");
-                    } else if ( i == 0 ) {
-                        Artyom.say("Per accedere in questa aria dovresti sapere password ");
+                        Artyom.say("Tutto bene, sto studiando come diventare più inteligente !");
+                    } else if ( i == 1 ) {
+                        Artyom.say("Mi dispiace ma accedere in questa aria possono solo programmatori di Volantino. Se sei uno di programmatori dici la parole-chiave per accedere");
                                                 
-                    }
+                    } 
                 }
             },
             
             {
-                indexes: ["Generate reports of * of this year"],
-                smart: true,
-                action: (i, month) => {
-                    let year = new Date().getFullYear();
-                    
-                    Artyom.say(`Generating reports of ${month} ${year} `);
+                indexes: ["Qundo riesci a fare qualcosa di serio?"],
+                action: () => {
 
-                    Artyom.say("Ready ! What were you expecting? write some code you lazy bear !");
+                    Artyom.say("Volentieri ma  tutto dipende del programmatore");
                 }
             },
+
+            {
+                indexes: ["Il dettaglio importante", "fammi sapere com`è la situzaione", "dai fai brava", "volantino ho problemi per testare "],
+                action: (i) => {
+                    if(i === 0) {
+                        Artyom.say("Benvenuto Andrew, stavo pensando che mi hai abbandonato");
+                    }else if(i === 1) {
+                        Artyom.say("Con questa tempistica per diventare smarty applicazione ci vuole cento anni ")
+                    } else if(i === 2) {
+                        Artyom.say("Comunque mancano funzioni di interazioni vocali con elementi DOM, ci sei riuscito a passarmi su React ma sei pigro Andrew"); 
+                    } else if( i === 3) {
+                        Artyom.say("Perchè non ti piace stare nella sala di runione ?");
+                    }
+                }
+            },
+
         ]);
     }
 }
