@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+#root, html, body {
+    margin: 0;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    background-color: whitesmoke;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html {
+    scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.header {
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 120px;
+    max-width: 600px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+   
+
+.header-title  h1{
+    color:#6a11cb;
+    font-weight: bold;
+    font-size: 34px;
+}
+.header-title  p{
+    color:#48c6ef;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-container {
+    margin-right: 50px;
+}
+
+.btn-response {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    color: yellowgreen;
+    background-color: gray;
+    border-radius: 5px;
+    font-weight: bold;
+    
+}
+
+.btn-response:hover {
+    background-color: black;
+    transition: 0.5ms;
+}
+
+.textarea-container {
+    margin-right: 50px;
+    max-width: 600px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.textarea-container p {
+    font-size: 20px;
+    color: tomato;
+    font-weight: bold;
+}
+
+.area-position {
+    max-width: 100%;
+    width: 600px;
+    min-height: 300px;
+    font-size: 24px;
+    color: green;
+    background-color: whitesmoke;
+    
+
+}
+
+.btn-read-text {
+    width: 100%;
+    display: block;
+    height: 35px;
+    background-color: turquoise;
+    color: black;
+    font-weight: white;
+    border-radius: 2px;
+}
+
+.btn-read-text:hover{ 
+    background-color: red;
 }
