@@ -3,6 +3,7 @@ import React from 'react';
 import Artyom from 'artyom.js';
 import ArtyomCommandsManager from './ArtyomCommands';
 import './App.css';
+import DevopsArea from './DevopsArea';
 
 // Import the previously created class to handle the commands from another file
 const Jarvis = new Artyom();
@@ -35,7 +36,7 @@ export default class App extends React.Component {
         console.log("Artyom succesfully started !");
 
         Jarvis.initialize({
-            lang: "en-GB",
+            lang: "it-IT",
             debug: true,
             continuous: true,
             soundex: true,
@@ -44,7 +45,7 @@ export default class App extends React.Component {
             // Display loaded commands in the console
             console.log(Jarvis.getAvailableCommands());
 
-            Jarvis.say("Hello developer?");
+            Jarvis.say("Benvenuto developer?");
 
             _this.setState({
                 artyomActive: true
@@ -114,6 +115,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="header">
+                <DevopsArea/>
                 <div className="header-title">
                     <h1>Welcome to Jarvis Assistant</h1>
                     <p>In this very basic assistant, you can say hello and ask for some reports e.g `Generate report of April of this year`</p>

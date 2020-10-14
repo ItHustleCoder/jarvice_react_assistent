@@ -1,0 +1,50 @@
+.dev-aria {
+    display: block;
+    position: absolute;
+    background-color: black;
+    min-width: 600px;
+    min-height: 600px;
+    overflow: auto;
+    z-index: 1.6;
+}
+
+
+
+.title-head {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 77px;
+}
+.title-head h3 {
+    color: rgb(10, 197, 103);
+    font-weight: bold;
+}
+.pass-aria {
+    width: 50%;
+    height: 35px;
+}
+
+.btn-pass {
+    min-width: 50%;
+    margin-top: 5px;
+    height: 30px;
+}
+
+.display-off {
+    display: none
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    max-height: 100%;
+}
+
+.img-box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+

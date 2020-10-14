@@ -13,21 +13,42 @@ export default class ArtyomCommandsManager {
         // Here you can load all the commands that you want to Artyom
         return Artyom.addCommands([
             {
-                indexes: ["Hello", "Hi"],
+                indexes: ["Buongiorno", "Buonasera","Ciao"],
                 action: (i) => {
-                    if(i == 0) {
-                        Artyom.say("Hello, how are you?");
-                    } else if(i == 1) {
-                        Artyom.say('Hi, whats up');
+                    // if(i == 0) {
+                    //     Artyom.say("Buongiorno, come stai ?");
+                    // } else if(i == 1) {
+                    //     Artyom.say('Buonasera');
+                    // } else if(i == 2) {
+                    //     Artyom.say('Buon Pomeriggio');
+                    // } else if(i == 3){
+                    //     Artyom.say("Caio, come stai?");
+                    // }
+                    switch(i) {
+                        case 0:
+                            Artyom.say("Buongiorno, come stai?");
+                            break;
+                        case 1:
+                            Artyom.say("Buonasera, non tardi mai per programmare!");
+                            break;
+                       
+                        case 2:
+                            Artyom.say("Ciao!");
+                        break;
                     }
                 }
+                
             },
 
             {
-                indexes: ["How are you?"],
-                smart: true,
-                action: () => {
-                    Artyom.say("I'm fine, thanks for asking !");
+                indexes: ["come la situazione?", "informazioni per developer"],
+                action: (i) => {
+                    if( i == 0) {
+                        Artyom.say("Tutto bene, sto studiando come diventera più inteligente !");
+                    } else if ( i == 0 ) {
+                        Artyom.say("Per accedere in questa aria dovresti sapere password ");
+                                                
+                    }
                 }
             },
             

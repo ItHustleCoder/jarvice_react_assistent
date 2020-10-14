@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: whitesmoke;
+    background-color: rgba(36, 29, 29, 0.835);
 
 }
 
@@ -31,7 +31,7 @@ html {
    
 
 .header-title  h1{
-    color:#6a11cb;
+    color:#3cba92;
     font-weight: bold;
     font-size: 34px;
 }
@@ -92,10 +92,13 @@ html {
     height: 35px;
     background-color: turquoise;
     color: black;
-    font-weight: white;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 2px;
 }
 
 .btn-read-text:hover{ 
     background-color: red;
 }
+
