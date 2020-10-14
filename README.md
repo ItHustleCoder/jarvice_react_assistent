@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.  Install Artyom.js
+    Artyom.js is an useful wrapper of the speechSynthesis and webkitSpeechRecognition APIs. Besides, it also lets you to add voice commands to your website easily so you can build your own Google Now, Siri or Cortana with predefined voice commands.
 
-## Available Scripts
+    To install this library, switch to the directory of your project with the terminal and install it via NPM executing the following command:
 
-In the project directory, you can run:
+    npm install artyom.js
 
-### `npm start`
+2.  Create a voice commands loader class
+    When working with Artyom.js, the voice commands are very easy to implement. A command is a literal object with at least 2 properties namely indexes and action, where indexes is a simple array with strings that will trigger the command (action) if the spoken text by the user matches any of them.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Start by creating a new file namely ArtyomCommands.js, here you will add all the commands that you want to add to Artyom. The structure that we'll use to inject the commands within an instance of Artyom will be the following: ArtyomCommands.js
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    The helper class ArtyomCommandsManager expects an instance of Artyom as argument in the constructor. The execution of the loadCommands method of the class, will inject the there declared commands in the given instance of Artyom. Note that this is just a scalable approach, as you can add the commands dinamically to artyom wherever you want.
 
-### `npm test`
+    3.  Creating your basic assistant
+        Now that we have some commands to add in Artyom, we can now proceed to initialize it. Using the advantages of the State in React, we are going to create 3 simple properties that we'll handle the status of buttons and actions in our very simple React application. 2 Boolean flags that will notice when artyom is already recognizing commands and spoking and a text variable that stores the text of a textarea where some text can be typed and spoken by Artyom.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        With the context of the following class, Artyom needs to be exposed to the entire class, therefore we have declared a constant named Jarvis that stores an instance of Artyom. Our markup is very simple too, there are 2 simple buttons that starts and stop the command recognition. The actions of this buttons are binded to the startAssistant and stopAssistand methods of the class that will execute some code to start Artyom. As the methods require the this context to update the state, you need to bind it in the constructor method of your main class, where you will inject the commands too with the previous created class. Having made that, the rest of the code is pretty straight forward and easy to read as long as you know React:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+            App.js
